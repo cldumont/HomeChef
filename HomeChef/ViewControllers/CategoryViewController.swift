@@ -9,7 +9,7 @@
 import UIKit
 
 class CategoryViewController: UICollectionViewController {
-    
+    var food = "red"
     var collectionData = ["Salad", "Hamburger", "French Fries" , "Spaghetti", "Meatloaf", "Steak", "Chicken", "Taco", "Cake", "Pudding"]
 
     override func viewDidLoad() {
