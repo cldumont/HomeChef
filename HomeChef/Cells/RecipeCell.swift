@@ -17,6 +17,6 @@ class RecipeCell: UICollectionViewCell {
         
         recipeImage.layer.borderWidth = 1
         recipeImage.layer.cornerRadius = 8
-        recipeImage.layer.backgroundColor = UIColor.lightGray.cgColor
+        //recipeImage.layer.backgroundColor = UIColor.lightGray.cgColor
     }
 }

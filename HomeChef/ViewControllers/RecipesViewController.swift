@@ -10,10 +10,15 @@ import UIKit
 
 class RecipesViewController: UICollectionViewController {
     
+    var selection = String()
+    
     var recipes = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = selection
         
         let width = (view.frame.size.width - 20) / 2
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
@@ -22,7 +27,7 @@ class RecipesViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        
         return 10
     }
 

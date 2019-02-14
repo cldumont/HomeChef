@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4423FD6B22150DFF00688B6B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423FD6A22150DFF00688B6B /* DataSource.swift */; };
+		4423FD6D22150E7A00688B6B /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4423FD6C22150E7A00688B6B /* RecipeCard.swift */; };
 		442A48FF2211E506007A5B6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A48FE2211E506007A5B6F /* AppDelegate.swift */; };
 		442A49012211E506007A5B6F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442A49002211E506007A5B6F /* CategoryViewController.swift */; };
 		442A49042211E506007A5B6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442A49022211E506007A5B6F /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4423FD6A22150DFF00688B6B /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		4423FD6C22150E7A00688B6B /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		442A48FB2211E506007A5B6F /* HomeChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		442A48FE2211E506007A5B6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		442A49002211E506007A5B6F /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4423FD6922150D9B00688B6B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4423FD6A22150DFF00688B6B /* DataSource.swift */,
+				4423FD6C22150E7A00688B6B /* RecipeCard.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		442A48F22211E506007A5B6F = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +71,7 @@
 		442A48FD2211E506007A5B6F /* HomeChef */ = {
 			isa = PBXGroup;
 			children = (
+				4423FD6922150D9B00688B6B /* Data */,
 				44EBDF2A22149D6C001764E7 /* Cells */,
 				44EBDF2922149D15001764E7 /* ViewControllers */,
 				44EBDF2822149CE8001764E7 /* Resources */,
@@ -168,7 +182,9 @@
 				44EBDF2C2214CA8A001764E7 /* RecipesViewController.swift in Sources */,
 				448431ED22136925003640F6 /* RecipeCell.swift in Sources */,
 				442A49012211E506007A5B6F /* CategoryViewController.swift in Sources */,
+				4423FD6B22150DFF00688B6B /* DataSource.swift in Sources */,
 				442A48FF2211E506007A5B6F /* AppDelegate.swift in Sources */,
+				4423FD6D22150E7A00688B6B /* RecipeCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
