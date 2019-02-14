@@ -9,13 +9,12 @@
 import UIKit
 
 class RecipeCell: UICollectionViewCell {
-    @IBOutlet var containerView: UIView!
+    
     @IBOutlet var recipeImage: UIImageView!
     @IBOutlet var recipeName: UILabel!
     
     override func awakeFromNib() {
-        containerView.layer.borderWidth = 1
-        containerView.layer.cornerRadius = 8
+        
         recipeImage.layer.borderWidth = 1
         recipeImage.layer.cornerRadius = 8
         recipeImage.layer.backgroundColor = UIColor.lightGray.cgColor

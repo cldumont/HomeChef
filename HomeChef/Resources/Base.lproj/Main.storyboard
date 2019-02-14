@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RcJ-BW-VUR">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Category View Controller-->
+        <scene sceneID="uTX-d9-SHD">
+            <objects>
+                <collectionViewController id="ED5-5n-vx7" customClass="CategoryViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qZK-Lz-rLK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nLK-7i-wOR">
+                            <size key="itemSize" width="170" height="142"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="kEw-4t-wUl" customClass="RecipeCell" customModule="HomeChef" customModuleProvider="target">
+                                <rect key="frame" x="5" y="0.0" width="170" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQj-ER-SOu">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-Wn-Ugm">
+                                            <rect key="frame" x="0.0" y="121.66666666666667" width="170" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RhT-Wn-Ugm" secondAttribute="trailing" id="06L-ca-aSO"/>
+                                    <constraint firstAttribute="bottom" secondItem="KQj-ER-SOu" secondAttribute="bottom" id="SdN-yk-cHV"/>
+                                    <constraint firstAttribute="bottom" secondItem="RhT-Wn-Ugm" secondAttribute="bottom" id="YVa-vO-Ki0"/>
+                                    <constraint firstItem="RhT-Wn-Ugm" firstAttribute="leading" secondItem="kEw-4t-wUl" secondAttribute="leading" id="aHW-eO-Lfs"/>
+                                    <constraint firstAttribute="trailing" secondItem="KQj-ER-SOu" secondAttribute="trailing" id="atF-Kt-lKY"/>
+                                    <constraint firstItem="KQj-ER-SOu" firstAttribute="top" secondItem="kEw-4t-wUl" secondAttribute="top" id="gg4-Nf-Ze3"/>
+                                    <constraint firstItem="KQj-ER-SOu" firstAttribute="leading" secondItem="kEw-4t-wUl" secondAttribute="leading" id="hkG-8S-tmy"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="recipeImage" destination="KQj-ER-SOu" id="81l-xg-wUB"/>
+                                    <outlet property="recipeName" destination="RhT-Wn-Ugm" id="3zd-5e-iaU"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="ED5-5n-vx7" id="tHm-kj-rwa"/>
+                            <outlet property="delegate" destination="ED5-5n-vx7" id="sxg-G1-d7f"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="eJb-39-2nY"/>
+                    <connections>
+                        <segue destination="neV-RD-giz" kind="show" identifier="RecipesView" id="mWp-vB-2d2"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2wx-Vp-BIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1292" y="89.408866995073893"/>
+        </scene>
+        <!--Recipes View Controller-->
+        <scene sceneID="1Yb-RV-Dae">
+            <objects>
+                <collectionViewController id="neV-RD-giz" customClass="RecipesViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9jm-O1-3nW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bp0-mA-jbG">
+                            <size key="itemSize" width="170" height="142"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCell" id="Xwi-Sv-WAs" customClass="RecipeCell" customModule="HomeChef" customModuleProvider="target">
+                                <rect key="frame" x="5" y="0.0" width="170" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oam-kz-Ly4">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-BD-ugl">
+                                            <rect key="frame" x="0.0" y="121" width="170" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="oam-kz-Ly4" secondAttribute="trailing" id="20z-J6-KDf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Khk-BD-ugl" secondAttribute="trailing" id="Ola-xk-xpg"/>
+                                    <constraint firstItem="Khk-BD-ugl" firstAttribute="leading" secondItem="Xwi-Sv-WAs" secondAttribute="leading" id="Sb7-0H-ZUl"/>
+                                    <constraint firstAttribute="bottom" secondItem="oam-kz-Ly4" secondAttribute="bottom" id="UCg-RU-J7r"/>
+                                    <constraint firstItem="oam-kz-Ly4" firstAttribute="top" secondItem="Xwi-Sv-WAs" secondAttribute="top" id="akN-Zn-oWA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Khk-BD-ugl" secondAttribute="bottom" id="oZd-dv-Tew"/>
+                                    <constraint firstItem="oam-kz-Ly4" firstAttribute="leading" secondItem="Xwi-Sv-WAs" secondAttribute="leading" id="rN8-ZR-v05"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="recipeImage" destination="oam-kz-Ly4" id="ekO-HM-PP9"/>
+                                    <outlet property="recipeName" destination="Khk-BD-ugl" id="90i-Wq-231"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="neV-RD-giz" id="7so-Ox-4Wo"/>
+                            <outlet property="delegate" destination="neV-RD-giz" id="5q1-zD-Rhq"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-8f-sSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055" y="89"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cgz-vA-J7A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RcJ-BW-VUR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RLf-DR-hWo">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ED5-5n-vx7" kind="relationship" relationship="rootViewController" id="GZO-zF-yMq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zXN-Dv-dwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="349.60000000000002" y="89.408866995073893"/>
+        </scene>
+    </scenes>
+</document>
