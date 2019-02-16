@@ -9,16 +9,7 @@
 import Foundation
 
 class RecipeCard {
-    
-    //var photo: String
-    var name: String
-    
-//    init(photo: String, name: String) {
-//        self.photo = photo
-//        self.name = name
-//    }
-    
-    init(name: String) {
-        self.name = name
-    }
+ 
+    var name = ""
+    var image = ""
 }

@@ -10,8 +10,15 @@ import UIKit
 
 class CategoryViewController: UICollectionViewController {
     
-   var categories = ["Salad", "Soup", "Meat" , "Fish", "Vegetable", "Pasta", "Dessert"]
+    var data: DataSource
     
+    required init?(coder aDecoder: NSCoder) {
+        
+        data = DataSource()
+        super.init(coder: aDecoder)
+        
+    }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,30 +34,33 @@ extension CategoryViewController {
     
 // MARK:- UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return data.categories.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RecipeCell
-        cell.recipeName.text = categories[indexPath.row]
-        cell.recipeImage.image = UIImage(named: categories[indexPath.row])
+        
+        cell.recipeName.text = data.categories[indexPath.row].name
+        cell.recipeImage.image = UIImage(named: data.categories[indexPath.row].image)
+        
         return cell
     }
  
-// MARK:- UICollectionViewDelegate
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "RecipesView", sender: indexPath)
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "RecipesView" {
-            if let dest = segue.destination as? RecipesViewController, let index = sender as? IndexPath {
-                dest.selection = categories[index.row]
-            }
-        }
-    }
-    
+ // MARK:- UICollectionViewDelegate
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//        performSegue(withIdentifier: "RecipesView", sender: indexPath)
+//
+//    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "RecipesView" {
+//            if let dest = segue.destination as? RecipesViewController, let index = sender as? IndexPath {
+//                dest.selection =
+//
+//            }
+//        }
+//    }
+
 }
 

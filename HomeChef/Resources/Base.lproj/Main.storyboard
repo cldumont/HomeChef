@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQj-ER-SOu">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQj-ER-SOu">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-Wn-Ugm">
