@@ -11,5 +11,5 @@ import Foundation
 class RecipeCard {
  
     var name = ""
-    var image = ""
+    
 }

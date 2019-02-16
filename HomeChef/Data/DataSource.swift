@@ -11,6 +11,7 @@ import Foundation
 class DataSource {
     
     var categories: [RecipeCard] = []
+    var recipes: [RecipeCard] = []
     
     init() {
         
@@ -30,14 +31,6 @@ class DataSource {
         item5.name = "Pasta"
         item6.name = "Dessert"
         
-        item0.image = "Salad"
-        item1.image = "Soup"
-        item2.image = "Meat"
-        item3.image = "Fish"
-        item4.image = "Vegetable"
-        item5.image = "Pasta"
-        item6.image = "Dessert"
-        
         categories.append(item0)
         categories.append(item1)
         categories.append(item2)
@@ -45,6 +38,9 @@ class DataSource {
         categories.append(item4)
         categories.append(item5)
         categories.append(item6)
+        
+        recipes.append(item0)
     }
+    
 
 }

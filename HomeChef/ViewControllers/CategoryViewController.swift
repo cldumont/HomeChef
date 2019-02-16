@@ -41,7 +41,7 @@ extension CategoryViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RecipeCell
         
         cell.recipeName.text = data.categories[indexPath.row].name
-        cell.recipeImage.image = UIImage(named: data.categories[indexPath.row].image)
+        cell.recipeImage.image = UIImage(named: data.categories[indexPath.row].name)
         
         return cell
     }
@@ -55,7 +55,7 @@ extension CategoryViewController {
 //
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "RecipesView" {
-//            if let dest = segue.destination as? RecipesViewController, let index = sender as? IndexPath {
+//            if let dest = segue.destination as? RecipeCardViewController, let index = sender as? IndexPath {
 //                dest.selection =
 //
 //            }

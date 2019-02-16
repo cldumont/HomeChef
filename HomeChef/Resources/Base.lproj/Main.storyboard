@@ -1,80 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RcJ-BW-VUR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bVj-ud-LmA">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Category View Controller-->
-        <scene sceneID="uTX-d9-SHD">
-            <objects>
-                <collectionViewController id="ED5-5n-vx7" customClass="CategoryViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qZK-Lz-rLK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nLK-7i-wOR">
-                            <size key="itemSize" width="170" height="142"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="kEw-4t-wUl" customClass="RecipeCell" customModule="HomeChef" customModuleProvider="target">
-                                <rect key="frame" x="5" y="0.0" width="170" height="142"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KQj-ER-SOu">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhT-Wn-Ugm">
-                                            <rect key="frame" x="0.0" y="121.66666666666667" width="170" height="20.333333333333329"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="RhT-Wn-Ugm" secondAttribute="trailing" id="06L-ca-aSO"/>
-                                    <constraint firstAttribute="bottom" secondItem="KQj-ER-SOu" secondAttribute="bottom" id="SdN-yk-cHV"/>
-                                    <constraint firstAttribute="bottom" secondItem="RhT-Wn-Ugm" secondAttribute="bottom" id="YVa-vO-Ki0"/>
-                                    <constraint firstItem="RhT-Wn-Ugm" firstAttribute="leading" secondItem="kEw-4t-wUl" secondAttribute="leading" id="aHW-eO-Lfs"/>
-                                    <constraint firstAttribute="trailing" secondItem="KQj-ER-SOu" secondAttribute="trailing" id="atF-Kt-lKY"/>
-                                    <constraint firstItem="KQj-ER-SOu" firstAttribute="top" secondItem="kEw-4t-wUl" secondAttribute="top" id="gg4-Nf-Ze3"/>
-                                    <constraint firstItem="KQj-ER-SOu" firstAttribute="leading" secondItem="kEw-4t-wUl" secondAttribute="leading" id="hkG-8S-tmy"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="recipeImage" destination="KQj-ER-SOu" id="81l-xg-wUB"/>
-                                    <outlet property="recipeName" destination="RhT-Wn-Ugm" id="3zd-5e-iaU"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="ED5-5n-vx7" id="tHm-kj-rwa"/>
-                            <outlet property="delegate" destination="ED5-5n-vx7" id="sxg-G1-d7f"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="eJb-39-2nY"/>
-                    <connections>
-                        <segue destination="neV-RD-giz" kind="show" identifier="RecipesView" id="mWp-vB-2d2"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2wx-Vp-BIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1292" y="89.408866995073893"/>
-        </scene>
-        <!--Recipes View Controller-->
+        <!--Recipe Card View Controller-->
         <scene sceneID="1Yb-RV-Dae">
             <objects>
-                <collectionViewController id="neV-RD-giz" customClass="RecipesViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="neV-RD-giz" customClass="RecipeCardViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9jm-O1-3nW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -124,28 +63,66 @@
                             <outlet property="delegate" destination="neV-RD-giz" id="5q1-zD-Rhq"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4qe-pl-OI5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ym2-Ml-3f4">
+                            <connections>
+                                <segue destination="Qxj-Yz-d4J" kind="show" identifier="AddRecipeSegue" id="RaJ-gE-WgO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-8f-sSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2055" y="89"/>
+            <point key="canvasLocation" x="2865" y="89"/>
+        </scene>
+        <!--Recipe View Controller-->
+        <scene sceneID="fDO-Lr-PEX">
+            <objects>
+                <viewController id="Qxj-Yz-d4J" customClass="RecipeViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PS6-4K-WVe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVP-iV-j2r">
+                                <rect key="frame" x="16" y="391" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Qxj-Yz-d4J" id="U7l-Ft-Mbc"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Zcn-gR-ZWT"/>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="HVP-iV-j2r" id="tky-Rv-E8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qf8-3h-2EV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3680.8000000000002" y="88.669950738916256"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Cgz-vA-J7A">
+        <scene sceneID="gkT-tM-6uV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RcJ-BW-VUR" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bVj-ud-LmA" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RLf-DR-hWo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5PD-Gk-Sbp">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ED5-5n-vx7" kind="relationship" relationship="rootViewController" id="GZO-zF-yMq"/>
+                        <segue destination="neV-RD-giz" kind="relationship" relationship="rootViewController" id="3zX-3r-sVx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zXN-Dv-dwh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPO-0b-amz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="349.60000000000002" y="89.408866995073893"/>
+            <point key="canvasLocation" x="2053.5999999999999" y="88.669950738916256"/>
         </scene>
     </scenes>
 </document>
