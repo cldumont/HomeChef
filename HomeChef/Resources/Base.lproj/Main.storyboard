@@ -14,7 +14,7 @@
         <scene sceneID="1Yb-RV-Dae">
             <objects>
                 <collectionViewController id="neV-RD-giz" customClass="RecipeCardViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9jm-O1-3nW">
+                    <collectionView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9jm-O1-3nW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,14 +25,14 @@
                             <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCell" id="Xwi-Sv-WAs" customClass="RecipeCell" customModule="HomeChef" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCell" id="Xwi-Sv-WAs" customClass="RecipeCell" customModule="HomeChef" customModuleProvider="target">
                                 <rect key="frame" x="5" y="0.0" width="170" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oam-kz-Ly4">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oam-kz-Ly4">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khk-BD-ugl">
@@ -41,20 +41,30 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="Ufc-nH-8i6">
+                                            <rect key="frame" x="140" y="112" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="orE-Nv-ael"/>
+                                                <constraint firstAttribute="height" constant="22" id="tgX-ZM-4g1"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="oam-kz-Ly4" secondAttribute="trailing" id="20z-J6-KDf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ufc-nH-8i6" secondAttribute="trailing" constant="8" id="6ub-K2-TMP"/>
                                     <constraint firstAttribute="trailing" secondItem="Khk-BD-ugl" secondAttribute="trailing" id="Ola-xk-xpg"/>
                                     <constraint firstItem="Khk-BD-ugl" firstAttribute="leading" secondItem="Xwi-Sv-WAs" secondAttribute="leading" id="Sb7-0H-ZUl"/>
                                     <constraint firstAttribute="bottom" secondItem="oam-kz-Ly4" secondAttribute="bottom" id="UCg-RU-J7r"/>
                                     <constraint firstItem="oam-kz-Ly4" firstAttribute="top" secondItem="Xwi-Sv-WAs" secondAttribute="top" id="akN-Zn-oWA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ufc-nH-8i6" secondAttribute="bottom" constant="8" id="oTw-2p-Vpr"/>
                                     <constraint firstAttribute="bottom" secondItem="Khk-BD-ugl" secondAttribute="bottom" id="oZd-dv-Tew"/>
                                     <constraint firstItem="oam-kz-Ly4" firstAttribute="leading" secondItem="Xwi-Sv-WAs" secondAttribute="leading" id="rN8-ZR-v05"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="recipeImage" destination="oam-kz-Ly4" id="ekO-HM-PP9"/>
                                     <outlet property="recipeName" destination="Khk-BD-ugl" id="90i-Wq-231"/>
+                                    <outlet property="selectionImage" destination="Ufc-nH-8i6" id="5ns-yA-ybo"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -63,7 +73,13 @@
                             <outlet property="delegate" destination="neV-RD-giz" id="5q1-zD-Rhq"/>
                         </connections>
                     </collectionView>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="7fr-yO-wLZ">
+                            <connections>
+                                <action selector="deleteSelected" destination="neV-RD-giz" id="TVL-Qs-wms"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="4qe-pl-OI5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ym2-Ml-3f4">
                             <connections>
@@ -71,6 +87,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="ym2-Ml-3f4" id="XXo-J8-19g"/>
+                        <outlet property="deleteButton" destination="7fr-yO-wLZ" id="3uM-LG-0Bv"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-8f-sSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,13 +130,17 @@
         <!--Navigation Controller-->
         <scene sceneID="gkT-tM-6uV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bVj-ud-LmA" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="bVj-ud-LmA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5PD-Gk-Sbp">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r8Q-tC-Fyr">
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="neV-RD-giz" kind="relationship" relationship="rootViewController" id="3zX-3r-sVx"/>
                     </connections>
@@ -125,4 +150,7 @@
             <point key="canvasLocation" x="2053.5999999999999" y="88.669950738916256"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unchecked" width="22" height="22"/>
+    </resources>
 </document>

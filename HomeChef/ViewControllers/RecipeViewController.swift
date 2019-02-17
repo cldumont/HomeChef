@@ -33,7 +33,6 @@ extension RecipeViewController: UITextFieldDelegate {
         if let textFieldText = textField.text {
             recipe.name = textFieldText
         }
-        print(recipe.name)
         delegate?.addRecipeViewController(self, didFinishAdding: recipe)
       
         textField.resignFirstResponder()
