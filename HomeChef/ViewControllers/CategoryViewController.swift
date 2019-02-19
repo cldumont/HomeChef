@@ -9,15 +9,6 @@
 import UIKit
 
 class CategoryViewController: UICollectionViewController {
-    
-    var data: DataSource
-    
-    required init?(coder aDecoder: NSCoder) {
-        
-        data = DataSource()
-        super.init(coder: aDecoder)
-        
-    }
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +25,14 @@ extension CategoryViewController {
     
 // MARK:- UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.categories.count
+        return 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! RecipeCell
         
-        cell.recipeName.text = data.categories[indexPath.row].name
-        cell.recipeImage.image = UIImage(named: data.categories[indexPath.row].name)
+        //cell.recipeName.text = categories[indexPath.row].name
+        //cell.recipeImage.image = UIImage(named: categories[indexPath.row].name)
         
         return cell
     }

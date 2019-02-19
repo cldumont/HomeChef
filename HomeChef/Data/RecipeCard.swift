@@ -8,8 +8,7 @@
 
 import Foundation
 
-class RecipeCard {
+class RecipeCard: NSObject, Codable {
  
     var name = ""
-    
 }
