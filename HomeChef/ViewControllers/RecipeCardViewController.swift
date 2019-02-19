@@ -92,7 +92,6 @@ class RecipeCardViewController: UICollectionViewController {
             let cell = collectionView .cellForItem(at: indexPath) as! RecipeCell
             cell.isEditing = editing
         }
-        //deleteButton.isEnabled = isEditing
         if !editing {
             navigationController?.isToolbarHidden = true
         }
@@ -100,6 +99,7 @@ class RecipeCardViewController: UICollectionViewController {
         saveRecipes()
     }
     
+    // MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddRecipeSegue" {
             if let recipeViewController = segue.destination as? RecipeViewController {

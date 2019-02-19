@@ -15,14 +15,6 @@ class CategoryViewController: UICollectionViewController {
     
     var categories = [Category]()
     
-    @IBAction func addCategory() {
-        
-        let category = Category(name: "soup")
-        categories.append(category)
-        let indexPath = IndexPath(row: categories.count - 1, section: 0)
-        collectionView.insertItems(at: [indexPath])
-    }
-    
     @IBAction func deleteSelected() {
         if let selected = collectionView.indexPathsForSelectedItems {
             let items = selected.map { $0.item }.sorted().reversed()
@@ -46,24 +38,12 @@ class CategoryViewController: UICollectionViewController {
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         
-        var category = Category(name: "salad")
+        let category = Category()
+        category.name = "salad"
         categories.append(category)
         
-        category = Category(name: "meat")
-        categories.append(category)
-        
-        category = Category(name: "pasta")
-        categories.append(category)
-        
-        category = Category(name: "fish")
-        categories.append(category)
-        
-        category = Category(name: "vegetable")
-        categories.append(category)
-        
-        category = Category(name: "dessert")
-        categories.append(category)
-        
+
+
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
@@ -89,6 +69,10 @@ class CategoryViewController: UICollectionViewController {
         if segue.identifier == "ShowRecipeCard" {
             let controller = segue.destination as! RecipeCardViewController
             controller.category = sender as? Category
+        } else if segue.identifier == "AddCategorySegue" {
+            if let addCategoryViewController = segue.destination as? AddCategoryViewController {
+                addCategoryViewController.delegate = self
+            }
         }
     }
     
@@ -130,5 +114,17 @@ extension CategoryViewController {
         }
     }
 
+}
+
+extension CategoryViewController: CategoryViewControllerDelegate {
+    func addCategoryViewController(_ controller: AddCategoryViewController, didFinishAdding category: Category) {
+        navigationController?.popViewController(animated: true)
+        let card = categories.count
+        categories.append(category)
+        let indexPath = IndexPath(row: card, section: 0)
+        let indexPaths = [indexPath]
+        collectionView.insertItems(at: indexPaths)
+    }
+    
 }
 

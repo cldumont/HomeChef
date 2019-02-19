@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qf8-3h-2EV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3735" y="89"/>
+            <point key="canvasLocation" x="2940" y="785"/>
         </scene>
         <!--Categories-->
         <scene sceneID="9mB-21-LhL">
@@ -200,7 +200,7 @@
                     <navigationItem key="navigationItem" title="Categories" id="Ypm-dD-Hb6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cDy-eU-5M6">
                             <connections>
-                                <action selector="addCategory" destination="TEL-SD-DAr" id="dz1-Ld-C1e"/>
+                                <segue destination="LmL-tl-msy" kind="show" identifier="AddCategorySegue" id="fJZ-yH-2a4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -214,6 +214,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgT-Fu-Xpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2140" y="89"/>
+        </scene>
+        <!--Add Category View Controller-->
+        <scene sceneID="Lht-hK-LDL">
+            <objects>
+                <viewController id="LmL-tl-msy" customClass="AddCategoryViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kQa-Cw-mO9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Drg-os-gcx">
+                                <rect key="frame" x="16" y="391" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="LmL-tl-msy" id="uwN-y2-goj"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="FZt-hB-AhM"/>
+                    </view>
+                    <connections>
+                        <outlet property="addCategoryTextField" destination="Drg-os-gcx" id="Uul-AA-4w9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Af-I6-3Rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2140" y="784.72906403940885"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gkT-tM-6uV">
