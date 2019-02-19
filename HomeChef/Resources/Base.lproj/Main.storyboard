@@ -158,13 +158,22 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unchecked" translatesAutoresizingMaskIntoConstraints="NO" id="cnR-bs-YLx">
+                                            <rect key="frame" x="140" y="112" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="B6x-ag-8nv"/>
+                                                <constraint firstAttribute="width" constant="22" id="mwS-EP-Fn1"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="bik-dy-dJQ" secondAttribute="trailing" id="2HU-9V-riT"/>
+                                    <constraint firstAttribute="trailing" secondItem="cnR-bs-YLx" secondAttribute="trailing" constant="8" id="5NH-zp-Kvj"/>
                                     <constraint firstItem="tSH-Ga-SEC" firstAttribute="leading" secondItem="EGW-ke-zgB" secondAttribute="leading" id="8ew-ET-dWj"/>
                                     <constraint firstItem="tSH-Ga-SEC" firstAttribute="top" secondItem="EGW-ke-zgB" secondAttribute="top" id="GNi-Eh-YxF"/>
                                     <constraint firstItem="bik-dy-dJQ" firstAttribute="leading" secondItem="EGW-ke-zgB" secondAttribute="leading" id="IE4-jV-8Zq"/>
+                                    <constraint firstAttribute="bottom" secondItem="cnR-bs-YLx" secondAttribute="bottom" constant="8" id="Na5-8C-6CV"/>
                                     <constraint firstAttribute="trailing" secondItem="tSH-Ga-SEC" secondAttribute="trailing" id="YbQ-az-Yfy"/>
                                     <constraint firstAttribute="bottom" secondItem="tSH-Ga-SEC" secondAttribute="bottom" id="i0A-mE-nBY"/>
                                     <constraint firstAttribute="bottom" secondItem="bik-dy-dJQ" secondAttribute="bottom" id="uSn-ho-j0N"/>
@@ -172,6 +181,7 @@
                                 <connections>
                                     <outlet property="recipeImage" destination="tSH-Ga-SEC" id="352-Gi-YTH"/>
                                     <outlet property="recipeName" destination="bik-dy-dJQ" id="yph-He-fZj"/>
+                                    <outlet property="selectionImage" destination="cnR-bs-YLx" id="FdZ-oX-Zqb"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -180,8 +190,24 @@
                             <outlet property="delegate" destination="TEL-SD-DAr" id="rid-uF-nih"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Categories" id="Ypm-dD-Hb6"/>
+                    <toolbarItems>
+                        <barButtonItem systemItem="trash" id="Vyz-YJ-rBR">
+                            <connections>
+                                <action selector="deleteSelected" destination="TEL-SD-DAr" id="BNQ-tb-91n"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Categories" id="Ypm-dD-Hb6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cDy-eU-5M6">
+                            <connections>
+                                <action selector="addCategory" destination="TEL-SD-DAr" id="dz1-Ld-C1e"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addButton" destination="cDy-eU-5M6" id="saJ-zw-C6k"/>
+                        <outlet property="deleteButton" destination="Vyz-YJ-rBR" id="GAm-O8-ebk"/>
                         <segue destination="neV-RD-giz" kind="show" identifier="ShowRecipeCard" id="ypu-eA-U8G"/>
                     </connections>
                 </collectionViewController>

@@ -15,6 +15,8 @@ class RecipeCardViewController: UICollectionViewController {
     
     var recipes = [RecipeCard]()
     
+    var category: Category!
+    
     @IBAction func deleteSelected() {
         if let selected = collectionView.indexPathsForSelectedItems {
             let items = selected.map { $0.item }.sorted().reversed()
@@ -31,8 +33,11 @@ class RecipeCardViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
         navigationItem.leftBarButtonItem = editButtonItem
         navigationController?.isToolbarHidden = true
+        
+        title = category.name
         
         let width = (view.frame.size.width - 20) / 2
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
