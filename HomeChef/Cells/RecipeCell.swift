@@ -32,7 +32,7 @@ class RecipeCell: UICollectionViewCell {
         
         recipeImage.layer.borderWidth = 1
         recipeImage.layer.cornerRadius = 8
-        
+
         
     }
 }

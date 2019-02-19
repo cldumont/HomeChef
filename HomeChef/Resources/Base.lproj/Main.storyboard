@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipe Card View Controller-->
+        <!--Recipe Card-->
         <scene sceneID="1Yb-RV-Dae">
             <objects>
-                <collectionViewController id="neV-RD-giz" customClass="RecipeCardViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="neV-RD-giz" userLabel="Recipe Card" customClass="RecipeCardViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9jm-O1-3nW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +80,7 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="4qe-pl-OI5">
+                    <navigationItem key="navigationItem" title="Recipe Cards" id="4qe-pl-OI5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ym2-Ml-3f4">
                             <connections>
                                 <segue destination="Qxj-Yz-d4J" kind="show" identifier="AddRecipeSegue" id="RaJ-gE-WgO"/>
@@ -95,7 +95,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rLW-8f-sSz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2865" y="89"/>
+            <point key="canvasLocation" x="2940" y="89"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="fDO-Lr-PEX">
@@ -125,7 +125,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qf8-3h-2EV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3680.8000000000002" y="88.669950738916256"/>
+            <point key="canvasLocation" x="3735" y="89"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="9mB-21-LhL">
+            <objects>
+                <collectionViewController id="TEL-SD-DAr" customClass="CategoryViewController" customModule="HomeChef" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0Gt-dl-5kg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y5w-3s-BjR">
+                            <size key="itemSize" width="170" height="142"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="EGW-ke-zgB" customClass="RecipeCell" customModule="HomeChef" customModuleProvider="target">
+                                <rect key="frame" x="5" y="0.0" width="170" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tSH-Ga-SEC">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bik-dy-dJQ">
+                                            <rect key="frame" x="0.0" y="121" width="170" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bik-dy-dJQ" secondAttribute="trailing" id="2HU-9V-riT"/>
+                                    <constraint firstItem="tSH-Ga-SEC" firstAttribute="leading" secondItem="EGW-ke-zgB" secondAttribute="leading" id="8ew-ET-dWj"/>
+                                    <constraint firstItem="tSH-Ga-SEC" firstAttribute="top" secondItem="EGW-ke-zgB" secondAttribute="top" id="GNi-Eh-YxF"/>
+                                    <constraint firstItem="bik-dy-dJQ" firstAttribute="leading" secondItem="EGW-ke-zgB" secondAttribute="leading" id="IE4-jV-8Zq"/>
+                                    <constraint firstAttribute="trailing" secondItem="tSH-Ga-SEC" secondAttribute="trailing" id="YbQ-az-Yfy"/>
+                                    <constraint firstAttribute="bottom" secondItem="tSH-Ga-SEC" secondAttribute="bottom" id="i0A-mE-nBY"/>
+                                    <constraint firstAttribute="bottom" secondItem="bik-dy-dJQ" secondAttribute="bottom" id="uSn-ho-j0N"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="recipeImage" destination="tSH-Ga-SEC" id="352-Gi-YTH"/>
+                                    <outlet property="recipeName" destination="bik-dy-dJQ" id="yph-He-fZj"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TEL-SD-DAr" id="NcI-Sy-wvF"/>
+                            <outlet property="delegate" destination="TEL-SD-DAr" id="rid-uF-nih"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Categories" id="Ypm-dD-Hb6"/>
+                    <connections>
+                        <segue destination="neV-RD-giz" kind="show" identifier="ShowRecipeCard" id="ypu-eA-U8G"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cgT-Fu-Xpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2140" y="89"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gkT-tM-6uV">
@@ -142,12 +204,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="neV-RD-giz" kind="relationship" relationship="rootViewController" id="3zX-3r-sVx"/>
+                        <segue destination="TEL-SD-DAr" kind="relationship" relationship="rootViewController" id="KsG-xP-jtd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPO-0b-amz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2053.5999999999999" y="88.669950738916256"/>
+            <point key="canvasLocation" x="1302" y="89"/>
         </scene>
     </scenes>
     <resources>
