@@ -25,7 +25,6 @@ class RecipeCardViewController: UICollectionViewController {
             }
             collectionView.deleteItems(at: selected)
         }
-        navigationController?.isToolbarHidden = true
         
         saveRecipes()
     }
@@ -34,7 +33,8 @@ class RecipeCardViewController: UICollectionViewController {
         super.viewDidLoad()
         
         navigationItem.largeTitleDisplayMode = .never
-        navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem = editButtonItem
+        editButtonItem.title = "Add/Edit"
         navigationController?.isToolbarHidden = true
         
         title = category.name
@@ -82,7 +82,7 @@ class RecipeCardViewController: UICollectionViewController {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        addButton.isEnabled = !editing
+        addButton.isEnabled = editing
         collectionView.allowsMultipleSelection = editing
         collectionView.indexPathsForSelectedItems?.forEach {
             collectionView.deselectItem(at: $0, animated: false)
@@ -92,7 +92,9 @@ class RecipeCardViewController: UICollectionViewController {
             let cell = collectionView .cellForItem(at: indexPath) as! RecipeCell
             cell.isEditing = editing
         }
-        if !editing {
+        if editing {
+            navigationController?.isToolbarHidden = false
+        } else {
             navigationController?.isToolbarHidden = true
         }
         

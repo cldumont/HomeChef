@@ -79,14 +79,14 @@
                                 <action selector="deleteSelected" destination="neV-RD-giz" id="TVL-Qs-wms"/>
                             </connections>
                         </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Recipe Cards" id="4qe-pl-OI5">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ym2-Ml-3f4">
+                        <barButtonItem width="300" style="plain" systemItem="fixedSpace" id="OS6-El-Juj"/>
+                        <barButtonItem systemItem="add" id="ym2-Ml-3f4">
                             <connections>
                                 <segue destination="Qxj-Yz-d4J" kind="show" identifier="AddRecipeSegue" id="RaJ-gE-WgO"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Recipe Cards" id="4qe-pl-OI5"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="ym2-Ml-3f4" id="XXo-J8-19g"/>
@@ -149,7 +149,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tSH-Ga-SEC">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tSH-Ga-SEC">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="142"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bik-dy-dJQ">

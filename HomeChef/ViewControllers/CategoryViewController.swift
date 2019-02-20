@@ -31,6 +31,7 @@ class CategoryViewController: UICollectionViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.isToolbarHidden = true
+        navigationItem.leftBarButtonItem = editButtonItem
         
         title = "Categories"
         
@@ -42,9 +43,6 @@ class CategoryViewController: UICollectionViewController {
         category.name = "salad"
         categories.append(category)
         
-
-
-        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
