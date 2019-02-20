@@ -13,20 +13,17 @@ class RecipeCardViewController: UICollectionViewController {
     @IBOutlet private weak var addButton: UIBarButtonItem!
     @IBOutlet private weak var deleteButton: UIBarButtonItem!
     
-    var recipes = [RecipeCard]()
-    
     var category: Category!
     
     @IBAction func deleteSelected() {
         if let selected = collectionView.indexPathsForSelectedItems {
             let items = selected.map { $0.item }.sorted().reversed()
             for item in items {
-                recipes.remove(at: item)
+                category.recipes.remove(at: item)
             }
             collectionView.deleteItems(at: selected)
         }
         
-        saveRecipes()
     }
    
     override func viewDidLoad() {
@@ -43,45 +40,12 @@ class RecipeCardViewController: UICollectionViewController {
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         
-        loadRecipes()
-        print("Documents folder is \(documentsDirectory())")
-        print("Data file path is \(dataFilePath())")
     }
     
-    func documentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
-    func dataFilePath() -> URL {
-        return documentsDirectory().appendingPathComponent("HomeChef.plist")
-    }
-    
-    func saveRecipes() {
-        let encoder = PropertyListEncoder()
-        do {
-            let data = try encoder.encode(recipes)
-            try data.write(to: dataFilePath(), options: Data.WritingOptions.atomic)
-        } catch {
-            print("Error encoding recipes array: \(error.localizedDescription)")
-        }
-    }
-    
-    func loadRecipes() {
-        let path = dataFilePath()
-        if let data = try? Data(contentsOf: path) {
-            let decoder = PropertyListDecoder()
-            do {
-                recipes = try decoder.decode([RecipeCard].self, from: data)
-            } catch {
-                print("Error decoding recipes array: \(error.localizedDescription)")
-            }
-        }
-        
-    }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
+        editButtonItem.title = "Add/Edit"
         addButton.isEnabled = editing
         collectionView.allowsMultipleSelection = editing
         collectionView.indexPathsForSelectedItems?.forEach {
@@ -98,7 +62,6 @@ class RecipeCardViewController: UICollectionViewController {
             navigationController?.isToolbarHidden = true
         }
         
-        saveRecipes()
     }
     
     // MARK:- Navigation
@@ -113,13 +76,13 @@ class RecipeCardViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return recipes.count
+        return category.recipes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecipeCell", for: indexPath) as! RecipeCell
-        cell.recipeName.text = recipes[indexPath.row].name
-        cell.recipeImage.image = UIImage(named: recipes[indexPath.row].name)
+        cell.recipeName.text = category.recipes[indexPath.row].name
+        cell.recipeImage.image = UIImage(named: category.recipes[indexPath.row].name)
         cell.isEditing = isEditing
         return cell
     }
@@ -146,13 +109,10 @@ class RecipeCardViewController: UICollectionViewController {
 extension RecipeCardViewController: RecipeViewControllerDelegate {
     func addRecipeViewController(_ controller: RecipeViewController, didFinishAdding recipe: RecipeCard) {
         navigationController?.popViewController(animated: true)
-        let card = recipes.count
-        recipes.append(recipe)
-        let indexPath = IndexPath(row: card, section: 0)
-        let indexPaths = [indexPath]
-        collectionView.insertItems(at: indexPaths)
-        
-        saveRecipes()
+        let card = category.recipes.count
+        category.recipes.append(recipe)
+        let indexPath = IndexPath(item: card, section: 0)
+        collectionView.insertItems(at: [indexPath])
     }
     
 }

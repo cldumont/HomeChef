@@ -11,5 +11,6 @@ import UIKit
 class Category: NSObject, Codable {
     
     var name = ""
+    var recipes = [RecipeCard]()
     
 }

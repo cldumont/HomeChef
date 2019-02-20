@@ -39,8 +39,32 @@ class CategoryViewController: UICollectionViewController {
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         
-        let category = Category()
+        var category = Category()
         category.name = "salad"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "soup"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "meat"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "fish"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "pasta"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "vegetable"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "dessert"
         categories.append(category)
         
     }
@@ -119,9 +143,8 @@ extension CategoryViewController: CategoryViewControllerDelegate {
         navigationController?.popViewController(animated: true)
         let card = categories.count
         categories.append(category)
-        let indexPath = IndexPath(row: card, section: 0)
-        let indexPaths = [indexPath]
-        collectionView.insertItems(at: indexPaths)
+        let indexPath = IndexPath(item: card, section: 0)
+        collectionView.insertItems(at: [indexPath])
     }
     
 }
