@@ -28,7 +28,7 @@ class RecipeViewController: UIViewController {
 extension RecipeViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        navigationController?.popViewController(animated: true)
+        //navigationController?.popViewController(animated: true)
         let recipe = RecipeCard()
         if let textFieldText = textField.text {
             recipe.name = textFieldText
