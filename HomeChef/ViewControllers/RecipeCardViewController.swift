@@ -45,7 +45,6 @@ class RecipeCardViewController: UICollectionViewController {
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
-        editButtonItem.title = "Add/Edit"
         addButton.isEnabled = editing
         collectionView.allowsMultipleSelection = editing
         collectionView.indexPathsForSelectedItems?.forEach {
@@ -58,8 +57,11 @@ class RecipeCardViewController: UICollectionViewController {
         }
         if editing {
             navigationController?.isToolbarHidden = false
+            navigationItem.hidesBackButton = true
         } else {
             navigationController?.isToolbarHidden = true
+            navigationItem.hidesBackButton = false
+            editButtonItem.title = "Add/Edit"
         }
         
     }

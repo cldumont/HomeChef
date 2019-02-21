@@ -12,7 +12,36 @@ class DataSource {
     var categories = [Category]()
     
     init() {
+        var category = Category()
+        category.name = "salad"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "soup"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "meat"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "fish"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "pasta"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "vegetable"
+        categories.append(category)
+        
+        category = Category()
+        category.name = "dessert"
+        categories.append(category)
+        
         loadCategories()
+        print(documentsDirectory())
     }
     
     func documentsDirectory() -> URL {

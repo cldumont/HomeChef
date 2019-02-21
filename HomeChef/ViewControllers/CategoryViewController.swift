@@ -39,41 +39,6 @@ class CategoryViewController: UICollectionViewController {
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         
-        
-//        var category = Category()
-//        category.name = "salad"
-//        categories.append(category)
-//
-//        category = Category()
-//        category.name = "soup"
-//        categories.append(category)
-//
-//        category = Category()
-//        category.name = "meat"
-//        categories.append(category)
-//
-//        category = Category()
-//        category.name = "fish"
-//        categories.append(category)
-//
-//        category = Category()
-//        category.name = "pasta"
-//        categories.append(category)
-//
-//        category = Category()
-//        category.name = "vegetable"
-//        categories.append(category)
-//
-//        category = Category()
-//        category.name = "dessert"
-//        categories.append(category)
-//
-//        for category in categories {
-//            let recipe = RecipeCard()
-//            recipe.name = "Category for \(category.name)"
-//            category.recipes.append(recipe)
-//        }
-        
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
@@ -92,8 +57,6 @@ class CategoryViewController: UICollectionViewController {
             navigationController?.isToolbarHidden = true
         }
     }
-    
-    
     
     // MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
