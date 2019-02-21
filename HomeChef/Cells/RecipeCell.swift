@@ -12,7 +12,7 @@ class RecipeCell: UICollectionViewCell {
     
     @IBOutlet var recipeImage: UIImageView!
     @IBOutlet var recipeName: UILabel!
-    @IBOutlet weak var selectionImage: UIImageView!
+    @IBOutlet private weak var selectionImage: UIImageView!
     
     var isEditing: Bool = false {
         didSet {

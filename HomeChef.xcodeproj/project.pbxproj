@@ -14,6 +14,7 @@
 		442A49042211E506007A5B6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442A49022211E506007A5B6F /* Main.storyboard */; };
 		442A49062211E507007A5B6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 442A49052211E507007A5B6F /* Assets.xcassets */; };
 		442A49092211E507007A5B6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 442A49072211E507007A5B6F /* LaunchScreen.storyboard */; };
+		443F33C5221F360400907470 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443F33C4221F360400907470 /* GradientView.swift */; };
 		448431ED22136925003640F6 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448431EC22136925003640F6 /* RecipeCell.swift */; };
 		44B72C0C221C9495008CCE5B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B72C0B221C9495008CCE5B /* Category.swift */; };
 		44B72C0E221CBB39008CCE5B /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B72C0D221CBB39008CCE5B /* AddCategoryViewController.swift */; };
@@ -31,6 +32,7 @@
 		442A49052211E507007A5B6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		442A49082211E507007A5B6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		442A490A2211E507007A5B6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		443F33C4221F360400907470 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		448431EC22136925003640F6 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		44B72C0B221C9495008CCE5B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		44B72C0D221CBB39008CCE5B /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		442A48FD2211E506007A5B6F /* HomeChef */ = {
 			isa = PBXGroup;
 			children = (
+				443F33C3221F35B300907470 /* Views */,
 				4423FD6922150D9B00688B6B /* Data */,
 				44EBDF2A22149D6C001764E7 /* Cells */,
 				44EBDF2922149D15001764E7 /* ViewControllers */,
@@ -86,6 +89,14 @@
 				442A490A2211E507007A5B6F /* Info.plist */,
 			);
 			path = HomeChef;
+			sourceTree = "<group>";
+		};
+		443F33C3221F35B300907470 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				443F33C4221F360400907470 /* GradientView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		44EBDF2822149CE8001764E7 /* Resources */ = {
@@ -190,6 +201,7 @@
 			files = (
 				44EBDF2C2214CA8A001764E7 /* RecipeCardViewController.swift in Sources */,
 				448431ED22136925003640F6 /* RecipeCell.swift in Sources */,
+				443F33C5221F360400907470 /* GradientView.swift in Sources */,
 				44B72C0E221CBB39008CCE5B /* AddCategoryViewController.swift in Sources */,
 				44CB9EF122185308005E126E /* RecipeViewController.swift in Sources */,
 				442A49012211E506007A5B6F /* CategoryViewController.swift in Sources */,
