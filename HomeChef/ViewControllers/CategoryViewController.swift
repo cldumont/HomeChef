@@ -13,13 +13,13 @@ class CategoryViewController: UICollectionViewController {
     @IBOutlet private weak var addButton: UIBarButtonItem!
     @IBOutlet private weak var deleteButton: UIBarButtonItem!
     
-    var categories = [Category]()
+    var dataSource: DataSource!
     
     @IBAction func deleteSelected() {
         if let selected = collectionView.indexPathsForSelectedItems {
             let items = selected.map { $0.item }.sorted().reversed()
             for item in items {
-                categories.remove(at: item)
+                dataSource.categories.remove(at: item)
             }
             collectionView.deleteItems(at: selected)
         }
@@ -39,33 +39,40 @@ class CategoryViewController: UICollectionViewController {
         let layout = collectionView?.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         
-        var category = Category()
-        category.name = "salad"
-        categories.append(category)
         
-        category = Category()
-        category.name = "soup"
-        categories.append(category)
-        
-        category = Category()
-        category.name = "meat"
-        categories.append(category)
-        
-        category = Category()
-        category.name = "fish"
-        categories.append(category)
-        
-        category = Category()
-        category.name = "pasta"
-        categories.append(category)
-        
-        category = Category()
-        category.name = "vegetable"
-        categories.append(category)
-        
-        category = Category()
-        category.name = "dessert"
-        categories.append(category)
+//        var category = Category()
+//        category.name = "salad"
+//        categories.append(category)
+//
+//        category = Category()
+//        category.name = "soup"
+//        categories.append(category)
+//
+//        category = Category()
+//        category.name = "meat"
+//        categories.append(category)
+//
+//        category = Category()
+//        category.name = "fish"
+//        categories.append(category)
+//
+//        category = Category()
+//        category.name = "pasta"
+//        categories.append(category)
+//
+//        category = Category()
+//        category.name = "vegetable"
+//        categories.append(category)
+//
+//        category = Category()
+//        category.name = "dessert"
+//        categories.append(category)
+//
+//        for category in categories {
+//            let recipe = RecipeCard()
+//            recipe.name = "Category for \(category.name)"
+//            category.recipes.append(recipe)
+//        }
         
     }
     
@@ -86,6 +93,8 @@ class CategoryViewController: UICollectionViewController {
         }
     }
     
+    
+    
     // MARK:- Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowRecipeCard" {
@@ -104,13 +113,13 @@ extension CategoryViewController {
     
 // MARK:- UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
+        return dataSource.categories.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! RecipeCell
         
-        let category = categories[indexPath.row]
+        let category = dataSource.categories[indexPath.row]
         cell.recipeName.text = category.name
         cell.recipeImage.image = UIImage(named: category.name)
         cell.isEditing = isEditing
@@ -121,7 +130,7 @@ extension CategoryViewController {
  // MARK:- UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if !isEditing {
-            let category = categories[indexPath.row]
+            let category = dataSource.categories[indexPath.row]
             performSegue(withIdentifier: "ShowRecipeCard", sender: category)
         } else {
             navigationController?.isToolbarHidden = false
@@ -141,8 +150,8 @@ extension CategoryViewController {
 extension CategoryViewController: CategoryViewControllerDelegate {
     func addCategoryViewController(_ controller: AddCategoryViewController, didFinishAdding category: Category) {
         navigationController?.popViewController(animated: true)
-        let card = categories.count
-        categories.append(category)
+        let card = dataSource.categories.count
+        dataSource.categories.append(category)
         let indexPath = IndexPath(item: card, section: 0)
         collectionView.insertItems(at: [indexPath])
     }
